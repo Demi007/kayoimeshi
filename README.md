@@ -1,25 +1,33 @@
-# README
+# 通い飯
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+食事処紹介及びレビューサイト
 
-Things you may want to cover:
+### サイトテーマ
+落ち着いて食事がしたい、自分だけの行きつけが欲しい、そんな人たちへ
 
-* Ruby version
+### テーマを選んだ理由
+人が食事に求めるものはなんでしょう？美味しさはもちろんですが、目新しさや懐かしさ、シチュエーションも人それぞれだと思います。このサイトは、落ち着いて食事できるところが知りたい、会社帰りに一人で、もしくは同僚と、ゆっくりと食事
 
-* System dependencies
+### ターゲットユーザ
+主に30代~50代の男性
 
-* Configuration
+### 主な利用シーン
+<>
 
-* Database creation
+## 設計書
+<...>
 
-* Database initialization
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1UgK-6l38k5T81XjcTIn7CHnGRkB_sBXS5xQWAVhWmks/edit#gid=0>
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# kayoimeshi-PF
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
