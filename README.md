@@ -1,25 +1,38 @@
-# README
+# 通い飯
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+食事処紹介及びレビューサイト
 
-Things you may want to cover:
+### サイトテーマ
+落ち着いて食事がしたい、自分だけの行きつけが欲しい、そんな人たちへ
 
-* Ruby version
+### テーマを選んだ理由
+私は社会人になってから、落ち着いて食事ができる店、行きつけの店が欲しいと常々考えていました。
+今はいろんなサイトでお店を探すことができますが、あまりにも情報が多く、煩わしく感じます。
+そんな中、落ち着いたお店、会社帰りに気軽に通えるようなお店だけを探せるサイトを作ろうと考えました。
 
-* System dependencies
+### ターゲットユーザ
+主に30代~50代の男性
 
-* Configuration
+### 主な利用シーン
+会社帰りや、転勤、出張先などで、日頃から通える食事処探しをする際
 
-* Database creation
+## 設計書
+ER図 https://drive.google.com/file/d/12CDuBjN_T9PKimnqNNl0xkFTtS7hr3EF/view?usp=sharing  
+テーブル定義書 https://docs.google.com/spreadsheets/d/16uX1S-3dR6eyvw9ruZGjepZ41Tc2_yaoWwnA_Pk2QpQ/edit?usp=sharing  
+ワイヤーフレーム https://xd.adobe.com/view/b110b6ff-e7de-40dc-a3d3-8c2b6eab37a7-e443/  
+詳細設計 https://docs.google.com/spreadsheets/d/1aFGVlPhh4bUHa3WESbXYfajq2Gg0YlqWKCJe3woyzgk/edit?usp=sharing
 
-* Database initialization
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/13Hkl5wvsPLoBfaYNxDvJDIYOg8GDKj5Qvq0myie5QBQ/edit?usp=sharing
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# kayoimeshi-PF
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
