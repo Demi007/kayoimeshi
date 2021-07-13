@@ -2,6 +2,56 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "restaurants/shared/error_messages", resource: resource %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :introduction %><br />
+    <%= f.text_field :introduction, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :announcement %><br />
+    <%= f.text_field :announcement, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :price_range %><br />
+    <%= f.text_field :price_range, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :open_morning %><br />
+    <%= f.text_field :open_morning, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :open_noon %><br />
+    <%= f.text_field :open_noon, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :open_night %><br />
+    <%= f.text_field :open_night, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :regular_holiday %><br />
+    <%= f.text_field :regular_holiday, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :postal_code %><br />
+    <%= f.text_field :postal_code, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
