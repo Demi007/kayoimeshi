@@ -9,15 +9,15 @@
     <% if user_signed_in? %>
         
      <li class="nav-list-item">
-       お気に入り<%#= link_to "お気に入り" %>
+        <%= link_to "お気に入り" %>
      </li>
      
      <li class="nav-list-item">
-       検索<%#= link_to "検索" %>
+       <%= link_to "検索", restaurants_path %>
      </li>
      
      <li class="nav-list-item">
-       お問い合わせ<%#= link_to "お問い合わせ" %>
+       <%= link_to "お問い合わせ", new_contacts_path %>
      </li>
      
      <li class="nav-list-item">
@@ -31,7 +31,7 @@
      </li>
      
      <li class="nav-list-item">
-       レビュー<%#= link_to "レビュー" %>
+       <%= link_to "レビュー" %>
      </li>
      
      <li class="nav-list-item">
@@ -39,7 +39,7 @@
      </li>
      
      <li class="nav-list-item">
-       お問い合わせ<%#= link_to "お問い合わせ" %>
+       <%= link_to "お問い合わせ" %>
      </li>
      
      <li class="nav-list-item">
@@ -53,7 +53,7 @@
      </li>
      
      <li class="nav-list-item">
-       お問い合わせ<%#= link_to "お問い合わせ" %>
+       <%= link_to "お問い合わせ", new_contacts_path %>
      </li>
      
      <li class="nav-list-item">
