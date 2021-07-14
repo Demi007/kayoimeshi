@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     root :to => 'homes#top'
     resources :restaurants, only: [:index, :show] do
     resources :images, only: [:index, :show]
-    resource :favorites, only: [:index, :create, :destroy]
+    resources :favorites, only: [:index, :create, :destroy]
     resources :reviews, only: [:new, :index, :show, :edit, :update, :destroy]
    end
     resource :contacts, only: [:new, :create]

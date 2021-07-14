@@ -9,7 +9,7 @@
     <% if user_signed_in? %>
         
      <li class="nav-list-item">
-        <%= link_to "お気に入り" %>
+        <%= link_to "お気に入り", restaurant_favorites_path %>
      </li>
      
      <li class="nav-list-item">
@@ -31,7 +31,7 @@
      </li>
      
      <li class="nav-list-item">
-       <%= link_to "レビュー" %>
+       <%= link_to "レビュー", owner_reviews_path %>
      </li>
      
      <li class="nav-list-item">
