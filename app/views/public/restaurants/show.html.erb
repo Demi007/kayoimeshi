@@ -7,3 +7,11 @@
 　  <h4>定休日</h4><p><%= @restaurant.regular_holiday %></p>
 　  
 　  <h4>紹介文</h4><p><%= @restaurant.introduction %></p>
+　  
+　  <h4>スタッフたち</h4>
+　  <% @restaurant.staffs.each do |staff| %>
+    　<%= staff.nick_name %>
+    　<%= staff.introduction %>
+  　<% end %>
+  　
+  　<h4>お店からのお知らせ</h4><p><%= @restaurant.announcement %></p>
