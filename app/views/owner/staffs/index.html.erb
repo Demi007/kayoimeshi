@@ -2,7 +2,5 @@
 　<% @restaurant.staffs.each do |staff| %>
 　<%= staff.nick_name %>
 　<%= staff.introduction%>
-　<%= staff.id %>
-　<%= staff.restaurant_id%>
 　<%= link_to "編集する", edit_owner_staff_path(staff) %>
 　<% end %>

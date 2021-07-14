@@ -21,6 +21,9 @@ class Owner::StaffsController < ApplicationController
     end
     
     def destroy
+        @staff = Staff.find(params[:id])
+        @staff.destroy
+        redirect_to owner_staffs_path
     end
     
     def index
