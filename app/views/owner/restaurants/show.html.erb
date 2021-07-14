@@ -1,4 +1,12 @@
-<h3>店名</h3><p><%= @restaurant.name %></p>
+    <h3>店名</h3><p><%= @restaurant.name %></p>
+    
+    <% @restaurant.images.each do |image| %>
+    <div>
+      <%= link_to owner_image_path(image.id) do %>
+        <%= attachment_image_tag image, :img, :fill, 100, 100 %>
+      <% end %>
+    </div>
+    <% end %>
 　    
 　  <h4>営業時間</h4><p>朝<%= @restaurant.open_morning %></p><p>昼<%= @restaurant.open_noon %></p><p>夜<%= @restaurant.open_night %></p>
 　    

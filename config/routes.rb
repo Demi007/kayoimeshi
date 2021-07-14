@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   namespace :owner do
     resources :restaurants, only: [:show, :edit, :update]
     resources :reviews, only: [:index, :show]
-    resources :images, only: [:index, :show, :create, :update, :destroy]
+    resources :images, only: [:index, :show, :create, :destroy]
     resources :staffs, only: [:new, :create, :index, :edit, :update, :destroy]
     resource :contacts, only: [:new, :create]
     get 'contacts/complete' => 'contacts#complete'

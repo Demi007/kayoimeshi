@@ -27,7 +27,7 @@
     <% elsif restaurant_signed_in? %>
     
      <li class="nav-list-item">
-       <%= link_to "マイページ" %>
+       <%= link_to "マイページ", owner_restaurant_path(current_restaurant) %>
      </li>
      
      <li class="nav-list-item">
