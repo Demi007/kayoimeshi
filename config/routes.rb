@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   scope module: :public do
     root :to => 'homes#top'
     resources :restaurants, only: [:index, :show] do
-    resources :images, only: [:index, :show]
     resource :favorites, only: [:index, :create, :destroy]
     resources :reviews, only: [:new, :index, :show, :edit, :update, :destroy]
+    resources :images, only: [:index, :show]
    end
     resource :contacts, only: [:new, :create]
     get 'contacts/complete' => 'contacts#complete'
