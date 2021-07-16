@@ -1,10 +1,9 @@
 class Public::ImagesController < ApplicationController
     def index
-        # @restaurant = Image.find(restaurant.id)
-        # @images = Image.all
+        @restaurant = Restaurant.find(params[:restaurant_id])
     end
     
     def show
-        # @restaurant = Restaurant.find(params[:id])
+        # @image = Image.find(params[:id])
     end
 end
