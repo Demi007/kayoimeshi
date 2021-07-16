@@ -9,7 +9,7 @@
     <% if user_signed_in? %>
         
      <li class="nav-list-item">
-        <%= link_to "お気に入り", restaurant_favorites_path %>
+        <%= link_to "お気に入り", restaurant_favorites_path(current_user) %>
      </li>
      
      <li class="nav-list-item">

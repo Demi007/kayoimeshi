@@ -22,3 +22,17 @@
   　<% end %>
   　
   　<h4>お店からのお知らせ</h4><p><%= @restaurant.announcement %></p>
+  　
+  　<% if @restaurant.favorited_by?(current_user) %>
+    <p>
+      <%= link_to restaurant_favorite_path(@restaurant), method: :delete do %>
+        ♥<%= @restaurant.favorites.count %> いいね
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to restaurant_favorites_path(@restaurant), method: :post do %>
+        ♡<%= @restaurant.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
