@@ -13,11 +13,15 @@ Rails.application.routes.draw do
   scope module: :public do
     root :to => 'homes#top'
     resources :restaurants, only: [:index, :show] do
-    resources :images, only: [:index, :show]
-    resources :favorites, only: [:index, :create, :destroy]
-    resources :reviews, only: [:new, :index, :show, :edit, :update, :destroy]
+      collection do
+      get 'search'
+    end
+      resources :images, only: [:index, :show]
+      resources :favorites, only: [:index, :create, :destroy]
+      resources :reviews, only: [:new, :index, :show, :edit, :update, :destroy]
    end
     resource :contacts, only: [:new, :create]
+    
     get 'contacts/complete' => 'contacts#complete'
   end
   namespace :owner do
