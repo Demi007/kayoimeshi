@@ -15,6 +15,6 @@ class Public::FavoritesController < ApplicationController
     
     def index
         @user = current_user
-        @restaurant = Restaurant.find(params[:restaurant_id])
+        
     end
 end
