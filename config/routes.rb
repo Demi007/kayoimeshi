@@ -15,14 +15,14 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:index, :show] do
     resources :images, only: [:index, :show]
     resources :favorites, only: [:index, :create, :destroy]
-    resources :reviews, only: [:new, :index, :show, :edit, :update, :destroy]
+    resources :reviews, only: [:new, :index, :edit, :update, :destroy, :create]
    end
     resource :contacts, only: [:new, :create]
     get 'contacts/complete' => 'contacts#complete'
   end
   namespace :owner do
     resources :restaurants, only: [:show, :edit, :update]
-    resources :reviews, only: [:index, :show]
+    resources :reviews, only: [:index]
     resources :images, only: [:index, :show, :create, :destroy]
     resources :staffs, only: [:new, :create, :index, :edit, :update, :destroy]
     resource :contacts, only: [:new, :create]

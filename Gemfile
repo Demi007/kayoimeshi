@@ -70,3 +70,6 @@ gem 'dotenv-rails'
 group :development, :test do
   gem 'rubocop-airbnb'
 end
+group :production do
+  gem 'mysql2'
+end

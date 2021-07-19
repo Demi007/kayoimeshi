@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_14_160614) do
+ActiveRecord::Schema.define(version: 2021_07_18_071632) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "restaurant_id", null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_07_14_160614) do
   create_table "reviews", force: :cascade do |t|
     t.integer "restaurant_id", null: false
     t.integer "user_id", null: false
-    t.float "star", default: 0.0, null: false
+    t.float "rate", default: 0.0, null: false
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

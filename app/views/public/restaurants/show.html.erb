@@ -22,3 +22,19 @@
   　<% end %>
   　
   　<h4>お店からのお知らせ</h4><p><%= @restaurant.announcement %></p>
+  　
+  　<div id="star-average">
+  　</div>
+  　<%= link_to "レビュー一覧", restaurant_reviews_path(@restaurant.id)%>
+  　
+  　<script>
+    $('#star-average').raty({
+      size     : 38,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      starHalf: '<%= asset_path('star-half.png') %>',
+      half: true,
+      readOnly: true,
+      score: '<%= @restaurant.reviews.average(:rate).to_f.round(1) %>',
+    });
+  </script>  
