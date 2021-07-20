@@ -1,4 +1,12 @@
 <h1>食事処一覧</h1>
+
+  <div class="search-form">
+    <%= form_with url: search_restaurants_path, method: :get, local: true do |f| %>
+      <%= f.text_field :keyword, value: @keyword %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
+  
 　<% @restaurants.each do |restaurant| %>
 　<div class="restaurant-item">
 　  <div class="restaurant-image"></div>
@@ -9,6 +17,8 @@
 　  <h4>営業時間</h4><p>朝<%= restaurant.open_morning %></p><p>昼<%= restaurant.open_noon %></p><p>夜<%= restaurant.open_night %></p>
 　    
 　  <h4>定休日</h4><p><%= restaurant.regular_holiday%></p>
+　  
+　  <h4>住所</h4><p><%= restaurant.address %></p>
 　 </div>
 　</div>
 　
