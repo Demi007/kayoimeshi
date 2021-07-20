@@ -70,3 +70,4 @@ gem 'dotenv-rails'
 group :development, :test do
   gem 'rubocop-airbnb'
 end
+gem 'geocoder'
