@@ -1,0 +1,24 @@
+<%= form_with model: @review, url: restaurant_reviews_path, local: true do |f| %>
+　　<div class="form-group" id="star">
+　　　<%= f.label :"評価" %><br>
+　　　<%= f.hidden_field :rate, id: :review_star %>
+　　</div>
+    
+    <div>
+    　<%= f.label :"口コミ内容" %><br>
+    　<%= f.text_area :comment %>
+    </div>
+　<%= f.submit '投稿' %>
+<% end %>
+
+
+<script>
+  $('#star').raty({
+    size     : 38,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'review[rate]',
+    half: true,
+  });
+</script>  

@@ -1,5 +1,5 @@
 <header>
-    <h1 class="">
+    <h1 class="l">
         通い飯
     </h1>
 </header>
@@ -8,11 +8,11 @@
     <ul class="nav-list">
     <% if user_signed_in? %>
         
-     <li class="nav-list-item">
+     <li class="nav-list__item">
         <%= link_to "お気に入り", restaurant_favorites_path(current_user) %>
      </li>
      
-     <li class="nav-list-item">
+     <li class="nav-list__item">
        <%= link_to "検索", restaurants_path %>
      </li>
      

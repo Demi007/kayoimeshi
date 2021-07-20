@@ -1,0 +1,28 @@
+<h1>レビュー一覧</h1>
+　<% @reviews.each do |review| %>
+　<% if review.user_id == current_user.id %>
+　  <div>
+　  <%= review.rate %>
+　  <span id="star-rate-<%= review.id %>"></span>
+　  <%= review.comment %>
+　  <%= link_to '評価を編集', edit_restaurant_review_path(@restaurant.id, review.id) %>
+　  </div>
+　 <% else %>
+　 <div>
+　  <%= review.rate %>
+　  <span id="star-rate-<%= review.id %>"></span>
+　  <%= review.comment %>
+　  </div>
+　  <% end %>
+　  <script>
+    $('#star-rate-<%= review.id %>').raty({
+      size: 38,
+      starOff: "<%= asset_path('star-off.png') %>",
+      starOn: "<%= asset_path('star-on.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      half: true,
+      readOnly: true,
+      score: <%= review.rate %>,
+    });
+    </script>
+　 <% end %>

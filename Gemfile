@@ -67,7 +67,10 @@ gem 'refile-mini_magick'
 gem 'kaminari', '~> 1.2.1'
 gem 'jquery-rails'
 gem 'dotenv-rails'
+gem 'geocoder'
 group :development, :test do
   gem 'rubocop-airbnb'
 end
-gem 'geocoder'
+group :production do
+  gem 'mysql2'
+end

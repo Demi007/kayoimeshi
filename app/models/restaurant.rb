@@ -7,6 +7,7 @@ class Restaurant < ApplicationRecord
   has_many :staffs, dependent: :destroy
   has_many :images, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
@@ -14,4 +15,5 @@ class Restaurant < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
+
 end
