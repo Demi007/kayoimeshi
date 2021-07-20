@@ -13,7 +13,7 @@ class Public::ReviewsController < ApplicationController
     end
     
     def edit
-        @review = Review.find(params[:review_id])
+        @review = Review.find(params[:id])
     end
     
     def update
@@ -24,7 +24,7 @@ class Public::ReviewsController < ApplicationController
     
     def index
         @restaurant = Restaurant.find(params[:restaurant_id])
-        @review = @restaurant.reviews.find(:review_id)
+        @reviews = @restaurant.reviews
     end
     
 
