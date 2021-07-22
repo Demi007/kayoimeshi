@@ -7,7 +7,7 @@ class Owner::StaffsController < ApplicationController
         @staff = Staff.new(staff_params)
         @staff.restaurant_id = current_restaurant.id
         @staff.save
-        redirect_to owner_staffs_path
+        redirect_to owner_restaurant_staffs_path(current_restaurant)
     end
     
     def edit
@@ -17,17 +17,18 @@ class Owner::StaffsController < ApplicationController
     def update
         @staff = Staff.find(params[:id])
         @staff.update(staff_params)
-        redirect_to owner_staffs_path
+        redirect_to owner_restaurant_staffs_path(current_restaurant)
     end
     
     def destroy
         @staff = Staff.find(params[:id])
         @staff.destroy
-        redirect_to owner_staffs_path
+        redirect_to owner_restaurant_staffs_path(current_restaurant)
     end
     
     def index
         @restaurant = current_restaurant
+        @staffs = @restaurant.staffs
     end
     
     private

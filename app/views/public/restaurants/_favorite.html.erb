@@ -1,0 +1,9 @@
+  <% if restaurant.favorited_by?(current_user) %>
+     <%= link_to restaurant_favorite_path(restaurant.id), method: :delete, remote: true do %>
+        ♥<%= restaurant.favorites.count %> いいね
+     <% end %>
+  <% else %>
+      <%= link_to restaurant_favorites_path(restaurant.id), method: :post, remote: true do %>
+        ♡<%= restaurant.favorites.count %> いいね
+      <% end %>
+  <% end %>

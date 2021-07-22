@@ -1,6 +1,7 @@
 class Owner::RestaurantsController < ApplicationController
     def show
         @restaurant = current_restaurant
+        @images = @restaurant.images
     end
     
     def edit

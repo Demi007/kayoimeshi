@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get 'search'
     end
       resources :images, only: [:index, :show]
-      resources :favorites, only: [:index, :create, :destroy]
+      resources :favorites, only: [:create, :destroy]
       resources :reviews, only: [:new, :index, :edit, :update, :destroy, :create]
    end
     resource :contacts, only: [:new, :create]
@@ -25,10 +25,11 @@ Rails.application.routes.draw do
     get 'contacts/complete' => 'contacts#complete'
   end
   namespace :owner do
-    resources :restaurants, only: [:show, :edit, :update]
+    resources :restaurants, only: [:show, :edit, :update] do
     resources :reviews, only: [:index]
     resources :images, only: [:index, :show, :create, :destroy]
     resources :staffs, only: [:new, :create, :index, :edit, :update, :destroy]
+  end
     resource :contacts, only: [:new, :create]
     get 'contacts/complete' => 'contacts#complete'
   end

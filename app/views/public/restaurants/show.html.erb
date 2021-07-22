@@ -1,7 +1,7 @@
 <h2>店舗詳細</h2>
-    <% @restaurant.images.each do |image| %>
+    <% @images.each do |image| %>
     <div>
-      <%= link_to restaurant_images_path(:restaurnat_id) do %>
+      <%= link_to restaurant_images_path(@restaurant.id) do %>
         <%= attachment_image_tag image, :img, :fill, 100, 100 %>
       <% end %>
     </div>
@@ -23,20 +23,10 @@
   　
   　<h4>お店からのお知らせ</h4><p><%= @restaurant.announcement %></p>
   　
-  　<% if @restaurant.favorited_by?(current_user) %>
-    <p>
-      <%= link_to restaurant_favorite_path(@restaurant), method: :delete do %>
-        ♥<%= @restaurant.favorites.count %> いいね
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to restaurant_favorites_path(@restaurant), method: :post do %>
-        ♡<%= @restaurant.favorites.count %> いいね
-      <% end %>
-    </p>
-  <% end %>
-  
+  　<div id="favorite_buttons_<%= @restaurant.id %>" >
+  　  <%= render "public/restaurants/favorite" , restaurant: @restaurant %>
+  　</div>
+  　
   <p>住所</p>
 <p><%= @restaurant.address %></p>(住所名表示)
 
