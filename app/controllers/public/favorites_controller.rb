@@ -11,9 +11,4 @@ class Public::FavoritesController < ApplicationController
         favorite = current_user.favorites.find_by(restaurant_id: @restaurant.id)
         favorite.destroy
     end
-    
-    def index
-        @user = current_user
-        
-    end
 end

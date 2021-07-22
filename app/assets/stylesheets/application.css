@@ -61,3 +61,18 @@ footer{
   color: #ffffdd;
   text-decoration: none;
 }
+
+.btn{
+  height: 40px;
+  width: 80px;
+  color: #fff;
+  background-color: #eb6100;
+  border-radius: 100vh;
+  border: none;
+  outline: none;
+}
+.btn:hover{
+  color: #fff;
+  background: #f56500;
+  border-radius: 100vh;
+}
