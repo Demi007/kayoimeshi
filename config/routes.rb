@@ -20,8 +20,7 @@ Rails.application.routes.draw do
       resources :favorites, only: [:create, :destroy]
       resources :reviews, only: [:new, :index, :edit, :update, :destroy, :create]
    end
-    resource :contacts, only: [:new, :create]
-    
+    get 'user/favorites/:id' => 'users#favorites', as: 'user_favorites'
     get 'contacts/complete' => 'contacts#complete'
   end
   namespace :owner do

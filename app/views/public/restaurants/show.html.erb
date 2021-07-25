@@ -1,3 +1,4 @@
+<div class="main">
 <h2>店舗詳細</h2>
     <% @images.each do |image| %>
     <div>
@@ -6,82 +7,113 @@
       <% end %>
     </div>
     <% end %>
-
-    <h3>店名</h3><p><%= @restaurant.name %></p>
-　    
-　  <h4>営業時間</h4><p>朝<%= @restaurant.open_morning %></p><p>昼<%= @restaurant.open_noon %></p><p>夜<%= @restaurant.open_night %></p>
-　    
-　  <h4>定休日</h4><p><%= @restaurant.regular_holiday %></p>
+    
+    <table>
+      <tr>
+        <td><strong>店名</strong>
+        </td><td><%= @restaurant.name %></td>
+      </tr>
+      <tr>
+        <td><strong>営業時間</strong></td>
+        <td><p>朝<%= @restaurant.open_morning %></p><p>昼<%= @restaurant.open_noon %></p><p>夜<%= @restaurant.open_night %></p></td>
+      </tr>
+      <tr>
+        <td><strong>定休日</strong></td>
+        <td><p><%= @restaurant.regular_holiday %></p></td>
+      </tr>
+      <tr>
+        <td><strong>住所</strong></td>
+        <td><p><%= @restaurant.address %></p></td>
+      </tr>
+      <tr>
+        <td><strong>評価平均</strong></td>
+        <td id="star-average">
+           <script>
+            $('#star-average').raty({
+              size     : 38,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: '<%= @restaurant.reviews.average(:rate).to_f.round(1) %>',
+            });
+           </script>  
+        </td>
+      </tr>
+      <tr>
+        <td><strong>紹介文</strong></td>
+        <td><p><%= @restaurant.introduction %></p></td>
+      </tr>
+    </table>
+    
+  　<div id="favorite_buttons_<%= @restaurant.id %>" >
+  　  <%= render "public/restaurants/favorite" , restaurant: @restaurant %>
+  　</div>
 　  
-　  <h4>紹介文</h4><p><%= @restaurant.introduction %></p>
-　  
-　  <h4>スタッフたち</h4>
+　  <div class="tab-wrap">
+　    
+    <input id="tab01" type="radio" name="tab" class="tab-switch" checked="checked">
+    <label class="tab-label" for="tab01">レビュー</label>
+    <div class="tab-content">
+      <%= link_to "レビュー一覧", restaurant_reviews_path(@restaurant.id)%>
+    </div>
+    <input id="tab02" type="radio" name="tab" class="tab-switch">
+    <label class="tab-label" for="tab02">スタッフたち</label>
+    <div class="tab-content">
 　  <% @restaurant.staffs.each do |staff| %>
     　<%= staff.nick_name %>
     　<%= staff.introduction %>
   　<% end %>
-  　
-  　<h4>お店からのお知らせ</h4><p><%= @restaurant.announcement %></p>
-  　
-  　<div id="favorite_buttons_<%= @restaurant.id %>" >
-  　  <%= render "public/restaurants/favorite" , restaurant: @restaurant %>
-  　</div>
-  　
-  <p>住所</p>
-<p><%= @restaurant.address %></p>(住所名表示)
+    </div>
+    <input id="tab03" type="radio" name="tab" class="tab-switch">
+    <label class="tab-label" for="tab03">お店からのお知らせ</label>
+    <div class="tab-content">
+  　  <p><%= @restaurant.announcement %></p>
+    </div>
+    <input id="tab04" type="radio" name="tab" class="tab-switch">
+    <label class="tab-label" for="tab04">地図</label>
+    <div class="tab-content">
+      <div id="map"></div>
+      <style>
+      #map{
+        height: 500px;
+        width: 100%;
+      }
+      </style>
+      
+      <script type="text/javascript">
+          function initMap() {
+      
+              var test ={lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
+              var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 15,
+                  center: test
+              });
+              var transitLayer = new google.maps.TransitLayer();
+              transitLayer.setMap(map);
+      
+              var contentString = '住所：<%= @restaurant.address %>';
+              var infowindow = new google.maps.InfoWindow({
+                  content: contentString
+              });
+      
+              var marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+              });
+      
+              marker.addListener('click', function() {
+                  infowindow.open(map, marker);
+              });
+          }
+      </script>
+      <script async defer
+              src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+      </script>
+    </div>
+    
+</div>
 
-  <div id="map"></div>
-
-<style>
-#map{
-  height: 150px;
-  width:270px;
-}
-</style>
-
-<script type="text/javascript">
-    function initMap() {
-
-        var test ={lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: test
-        });
-        var transitLayer = new google.maps.TransitLayer();
-        transitLayer.setMap(map);
-
-        var contentString = '住所：<%= @restaurant.address %>';
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-            position:test,
-            map: map,
-            title: contentString
-        });
-
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
-        });
-    }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-</script>
-
-  　<div id="star-average">
-  　</div>
-  　<%= link_to "レビュー一覧", restaurant_reviews_path(@restaurant.id)%>
-  　
-  　<script>
-    $('#star-average').raty({
-      size     : 38,
-      starOff:  '<%= asset_path('star-off.png') %>',
-      starOn : '<%= asset_path('star-on.png') %>',
-      starHalf: '<%= asset_path('star-half.png') %>',
-      half: true,
-      readOnly: true,
-      score: '<%= @restaurant.reviews.average(:rate).to_f.round(1) %>',
-    });
-  </script>  
+</div>
