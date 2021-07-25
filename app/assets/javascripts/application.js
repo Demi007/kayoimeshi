@@ -16,3 +16,9 @@
 //= require jquery
 //= require jquery.raty.js
 //= require_tree .
+
+$(document).on('turbolinks:load', function () {
+    $('.slider').slick({
+        dots: true,
+    });
+});

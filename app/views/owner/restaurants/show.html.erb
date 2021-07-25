@@ -1,10 +1,10 @@
+    <div class="slider">
     <% @images.each do |image| %>
-    <div>
       <%= link_to owner_restaurant_images_path(@restaurant.id) do %>
         <%= attachment_image_tag image, :img, :fill, 100, 100 %>
       <% end %>
-    </div>
     <% end %>
+    </div>
     
     <table>
       <tr>

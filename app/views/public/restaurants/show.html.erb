@@ -1,12 +1,12 @@
 <div class="main">
 <h2>店舗詳細</h2>
+    <div class="slider">
     <% @images.each do |image| %>
-    <div>
       <%= link_to restaurant_images_path(@restaurant.id) do %>
         <%= attachment_image_tag image, :img, :fill, 100, 100 %>
       <% end %>
-    </div>
     <% end %>
+    </div>
     
     <table>
       <tr>
@@ -29,6 +29,7 @@
         <td><strong>評価平均</strong></td>
         <td id="star-average">
            <script>
+           $(document).on('turbolinks:load', function () {
             $('#star-average').raty({
               size     : 38,
               starOff:  '<%= asset_path('star-off.png') %>',
@@ -38,6 +39,7 @@
               readOnly: true,
               score: '<%= @restaurant.reviews.average(:rate).to_f.round(1) %>',
             });
+           });
            </script>  
         </td>
       </tr>

@@ -9,7 +9,11 @@
   
 　<% @restaurants.each do |restaurant| %>
 　<div class="restaurant-item">
-　  <div class="restaurant-image"></div>
+　  <div class="slider">
+　    <% restaurant.images.each do |image| %>
+　     <%= attachment_image_tag image, :img, :fill, 100, 100 %>
+　    <% end %>
+　  </div>
 　  
 　  <div>
 　  <h3>店名</h3><p><%= link_to restaurant.name, restaurant_path(restaurant.id) %></p>
