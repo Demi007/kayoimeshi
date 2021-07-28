@@ -9,7 +9,7 @@ class Public::RestaurantsController < ApplicationController
   end
 
   def search
-    @restaurants = Restaurant.search(params[:keyword])
+    @restaurants = Restaurant.search(params[:keyword]).page(params[:page]).per(10)
     @keyword = params[:keyword]
     render "index"
   end

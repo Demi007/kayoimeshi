@@ -4,3 +4,4 @@
 　<%= staff.introduction%>
 　<%= link_to "編集する", edit_owner_restaurant_staff_path(@restaurant.id, staff.id) %>
 　<% end %>
+　<%= link_to "スタッフを追加", new_owner_restaurant_staff_path(@restaurant.id)%>
