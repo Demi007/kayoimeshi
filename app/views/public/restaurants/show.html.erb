@@ -1,35 +1,44 @@
-<div class="main">
-<h2>店舗詳細</h2>
-    <div class="slider">
-    <% @images.each do |image| %>
-      <%= link_to restaurant_images_path(@restaurant.id) do %>
-        <%= attachment_image_tag image, :img, :fill, 100, 100 %>
+
+<h1>店舗詳細</h1>
+<div class="container">
+<div class="restaurant">
+    <div class="restaurant__item small-image">
+      <div class="slider restaurant__item-img">
+      <% @images.each do |image| %>
+        <%= link_to restaurant_images_path(@restaurant.id) do %>
+          <%= attachment_image_tag image, :img, :fill, 600, 400 %>
+        <% end %>
       <% end %>
-    <% end %>
-    </div>
+      </div>
+    </div> 
     
+  <div class="restaurant__item">
     <table>
       <tr>
-        <td><strong>店名</strong>
-        </td><td><%= @restaurant.name %></td>
+        <td><strong>店名</strong></td>
+        <td></td>
+        <td><%= @restaurant.name %></td>
       </tr>
       <tr>
         <td><strong>営業時間</strong></td>
-        <td><p>朝<%= @restaurant.open_morning %></p><p>昼<%= @restaurant.open_noon %></p><p>夜<%= @restaurant.open_night %></p></td>
+        <td></td>
+        <td><p>朝<%= @restaurant.open_morning %>、昼<%= @restaurant.open_noon %>、夜<%= @restaurant.open_night %></p></td>
       </tr>
       <tr>
         <td><strong>定休日</strong></td>
+        <td></td>
         <td><p><%= @restaurant.regular_holiday %></p></td>
       </tr>
       <tr>
         <td><strong>住所</strong></td>
+        <td></td>
         <td><p><%= @restaurant.address %></p></td>
       </tr>
       <tr>
         <td><strong>評価平均</strong></td>
+        <td></td>
         <td id="star-average">
            <script>
-           $(document).on('turbolinks:load', function () {
             $('#star-average').raty({
               size     : 38,
               starOff:  '<%= asset_path('star-off.png') %>',
@@ -39,39 +48,83 @@
               readOnly: true,
               score: '<%= @restaurant.reviews.average(:rate).to_f.round(1) %>',
             });
-           });
            </script>  
         </td>
+        <tr>
+        <td><strong>価格帯</strong></td>
+        <td></td>
+        <td><p><%= @restaurant.price_range %>円</p></td>
       </tr>
-      <tr>
-        <td><strong>紹介文</strong></td>
-        <td><p><%= @restaurant.introduction %></p></td>
       </tr>
     </table>
+    <div class="restaurant__item">
+      <strong>紹介</strong>
+      <div>
+       <%= @restaurant.introduction %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  
+  <% if user_signed_in? %>
+  <div class="row center" id="favorite_buttons_<%= @restaurant.id %>" >
+    <%= render "public/restaurants/favorite", restaurant: @restaurant %>
+  </div>
+  <div class="row center">
+   <%= link_to "レビューする", new_restaurant_review_path(@restaurant), class:"btn btn__review" %>
+  </div>
+  <% else %>
+  <div>
+  </div>
+  <% end %>
+</div>
+  
+  <div class="tab-wrap">
     
-  　<div id="favorite_buttons_<%= @restaurant.id %>" >
-  　  <%= render "public/restaurants/favorite" , restaurant: @restaurant %>
-  　</div>
-　  
-　  <div class="tab-wrap">
-　    
     <input id="tab01" type="radio" name="tab" class="tab-switch" checked="checked">
     <label class="tab-label" for="tab01">レビュー</label>
     <div class="tab-content">
+      <% @restaurant.reviews.first(10).each do |review| %>
+      <div class="">
+      <%= review.rate %>
+    　  <span id="star-rate-<%= review.id %>"></span>
+    　  <%= review.comment %>
+    　  <script>
+        $('#star-rate-<%= review.id %>').raty({
+          size: 38,
+          starOff: "<%= asset_path('star-off.png') %>",
+          starOn: "<%= asset_path('star-on.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+          half: true,
+          readOnly: true,
+          score: <%= review.rate %>,
+        });
+    </script>
+    </div>
+      <% end %>
       <%= link_to "レビュー一覧", restaurant_reviews_path(@restaurant.id)%>
     </div>
     <input id="tab02" type="radio" name="tab" class="tab-switch">
     <label class="tab-label" for="tab02">スタッフたち</label>
     <div class="tab-content">
-　  <% @restaurant.staffs.each do |staff| %>
-    　<%= staff.nick_name %>
-    　<%= staff.introduction %>
-  　<% end %>
+        <% @restaurant.staffs.first(5).each do |staff| %>
+      　  <table>
+                <tr>
+                  <td>
+                    <%= staff.nick_name %>
+                  </td>
+                  <td>
+                    <%= staff.introduction %>
+                  </td>
+                </tr>
+          </table>
+        <% end %>
     </div>
     <input id="tab03" type="radio" name="tab" class="tab-switch">
     <label class="tab-label" for="tab03">お店からのお知らせ</label>
     <div class="tab-content">
-  　  <p><%= @restaurant.announcement %></p>
+    <p><%= @restaurant.announcement %></p>
     </div>
     <input id="tab04" type="radio" name="tab" class="tab-switch">
     <label class="tab-label" for="tab04">地図</label>
@@ -116,6 +169,4 @@
       </script>
     </div>
     
-</div>
-
 </div>

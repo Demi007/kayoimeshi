@@ -1,4 +1,5 @@
 class Public::FavoritesController < ApplicationController
+    before_action :authenticate_user!,except: [:create, :destroy]
     def create
         @restaurant = Restaurant.find(params[:restaurant_id])
         favorite = current_user.favorites.new(restaurant_id: @restaurant.id)

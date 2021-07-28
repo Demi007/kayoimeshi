@@ -22,12 +22,16 @@ class Public::ReviewsController < ApplicationController
         redirect_to restaurant_reviews_path(@review.restaurant_id)
     end
     
-    def destoy
+    def destroy
+        @restaurant = Restaurant.find(params[:restaurant_id])
+        @review = Review.find(params[:id])
+        @review.destroy
+        redirect_to restaurant_path(@restaurant)
     end
     
     def index
         @restaurant = Restaurant.find(params[:restaurant_id])
-        @reviews = @restaurant.reviews
+        @reviews = @restaurant.reviews.page(params[:page]).per(15)
     end
     
 

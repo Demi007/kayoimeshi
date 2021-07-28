@@ -11,12 +11,12 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   scope module: :public do
-    root :to => 'homes#top'
+    root :to => 'restaurants#index'
     resources :restaurants, only: [:index, :show] do
       collection do
       get 'search'
     end
-      resources :images, only: [:index, :show]
+      resources :images, only: [:index]
       resources :favorites, only: [:create, :destroy]
       resources :reviews, only: [:new, :index, :edit, :update, :destroy, :create]
    end

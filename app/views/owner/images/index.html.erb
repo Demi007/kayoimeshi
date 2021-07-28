@@ -1,13 +1,15 @@
-<h1>店舗画像一覧</h1>
-<% @images.each do |image| %>
+
 <div>
-  <%= link_to owner_restaurant_image_path(@restaurant.id, image.id) do %>
-    <%= attachment_image_tag image, :img, :fill, 100, 100 %>
+  <% @images.each do |image| %>
+    <%= link_to owner_restaurant_image_path(@restaurant.id, image.id) do %>
+      <%= attachment_image_tag image, :img, :fill, 100, 100 %>
+    <% end %>
   <% end %>
 </div>
-<% end %>
+<div>
 <%= form_with model: @image, url: owner_restaurant_images_path, local:true do |f| %>
   <h4>画像</h4>
   <%= f.attachment_field :img %>
   <%= f.submit '投稿' %>
 <% end %>
+</div>

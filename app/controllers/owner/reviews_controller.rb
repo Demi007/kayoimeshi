@@ -1,7 +1,6 @@
 class Owner::ReviewsController < ApplicationController
     def index
-    end
-    
-    def show
+        @restaurant = current_restaurant
+        @reviews = @restaurant.reviews.page(params[:page]).per(15)
     end
 end
