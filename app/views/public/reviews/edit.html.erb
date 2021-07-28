@@ -1,7 +1,6 @@
 <%= form_with model: @review, url: restaurant_review_path, local: true do |f| %>
-　　<div class="center">
+　　<div class="center", id="star">
 　　　<strong><%= f.label :"評価" %></strong>
-　　　<div id="star"></div>
 　　　<%= f.hidden_field :rate, id: :review_star %>
 　　</div>
     
