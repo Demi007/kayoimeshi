@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_14_160614) do
+ActiveRecord::Schema.define(version: 2021_07_19_070919) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "restaurant_id", null: false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2021_07_14_160614) do
     t.string "address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_restaurants_on_email", unique: true
     t.index ["reset_password_token"], name: "index_restaurants_on_reset_password_token", unique: true
   end
@@ -51,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_07_14_160614) do
   create_table "reviews", force: :cascade do |t|
     t.integer "restaurant_id", null: false
     t.integer "user_id", null: false
-    t.float "star", default: 0.0, null: false
+    t.float "rate", default: 0.0, null: false
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,3 +1,8 @@
-<%# @images.each do |image| %>
-
-<%# end %>
+<div>
+<%= link_to "戻る", restaurant_path(@restaurant.id) %>
+</div>
+<div>
+<% @images.each do |image| %>
+  <%= attachment_image_tag image, :img, :fill, 300, 300 %>
+<% end %>
+</div>
