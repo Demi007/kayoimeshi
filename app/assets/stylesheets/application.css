@@ -55,6 +55,8 @@ footer{
 .btn{
   border: none;
   outline: none;
+  color: white;
+  text-decoration: none;
 }
 .btn__orange{
   height: 40px;
@@ -201,6 +203,7 @@ main {
 .restaurant__item{
   margin-right: 30px;
 }
+
 
 /*画像*/
 .restaurant__item--small-img{
