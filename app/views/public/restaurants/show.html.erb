@@ -84,11 +84,11 @@
     <input id="tab01" type="radio" name="tab" class="tab-switch" checked="checked">
     <label class="tab-label" for="tab01">レビュー</label>
     <div class="tab-content">
-      <% @restaurant.reviews.first(10).each do |review| %>
-      <div class="">
+      <% @restaurant.reviews.first(5).each do |review| %>
+      <div>
       <%= review.rate %>
     　  <span id="star-rate-<%= review.id %>"></span>
-    　  <%= review.comment %>
+    　 <p class="text"><%= review.comment %></p> 
     　  <script>
         $('#star-rate-<%= review.id %>').raty({
           size: 38,
@@ -167,5 +167,4 @@
               src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
       </script>
     </div>
-    
 </div>

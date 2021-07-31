@@ -1,5 +1,5 @@
 
-    <strong><%= link_to "編集する", edit_owner_restaurant_path(@restaurant) %></strong>
+<strong><%= link_to "編集する", edit_owner_restaurant_path(@restaurant) %></strong>
 <div class="container">
 <div class="restaurant">
     <div class="restaurant__item small-image">
@@ -60,14 +60,13 @@
       <div class="restaurant__item">
           <strong>紹介</strong>
           <div>
-          <%= @restaurant.introduction %>
+           <%= @restaurant.introduction %>
           </div>
       </div>
   </div>
   </div>
 </div>
-  
-  </div>
+
 </div>
     
     <div class="tab-wrap">
@@ -75,11 +74,11 @@
     <input id="tab01" type="radio" name="tab" class="tab-switch" checked="checked">
     <label class="tab-label" for="tab01">レビュー</label>
     <div class="tab-content">
-      <% @restaurant.reviews.first(10).each do |review| %>
-      <div class="">
+      <% @restaurant.reviews.first(5).each do |review| %>
+      <div>
       <%= review.rate %>
     　  <span id="star-rate-<%= review.id %>"></span>
-    　  <%= review.comment %>
+    　 <p class="text"><%= review.comment %></p>
     　  <script>
         $('#star-rate-<%= review.id %>').raty({
           size: 38,
@@ -158,5 +157,4 @@
               src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
       </script>
     </div>
-    
 </div>

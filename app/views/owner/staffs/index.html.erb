@@ -1,7 +1,9 @@
 <h1>スタッフ一覧</h1>
 　<% @staffs.each do |staff| %>
-　<%= staff.nick_name %>
-　<%= staff.introduction%>
-　<%= link_to "編集する", edit_owner_restaurant_staff_path(@restaurant.id, staff.id) %>
+　  　<%= staff.nick_name %>
+　  　<%= staff.introduction%>
+　　<%= link_to "編集する", edit_owner_restaurant_staff_path(@restaurant.id, staff.id) %>
 　<% end %>
-　<%= link_to "スタッフを追加", new_owner_restaurant_staff_path(@restaurant.id)%>
+　<div>
+　 <%= link_to "スタッフを追加", new_owner_restaurant_staff_path(@restaurant.id), class:"btn__green"%>
+　</div>

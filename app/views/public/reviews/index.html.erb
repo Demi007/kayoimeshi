@@ -6,7 +6,9 @@
   　  <div>
   　  <%= review.rate %>
   　  <span id="star-rate-<%= review.id %>"></span>
+  　 <div>
   　  <%= review.comment %>
+  　 </div>
   　  <%= link_to '評価を編集', edit_restaurant_review_path(@restaurant.id, review.id) %>
   　  </div>
   　 <% else %>

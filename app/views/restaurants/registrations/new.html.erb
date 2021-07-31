@@ -1,11 +1,10 @@
-<div class="main">
 <h2 class="heading center">新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "restaurants/shared/error_messages", resource: resource %>
   
   <div class="form__field center">
-    <%= f.label "名前" %><br />
+    <%= f.label "店名" %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
   
@@ -21,12 +20,12 @@
   
   <div class="form__field center">
     <%= f.label "価格帯" %><br />
-    <%= f.text_field :price_range, autofocus: true %>
+    <%= f.text_field :price_range, autofocus: true, placeholder:"例： 1000〜5000" %>
   </div>
   
   <div class="form__field center">
     <%= f.label "営業時間　朝" %><br />
-    <%= f.text_field :open_morning, autofocus: true %>
+    <%= f.text_field :open_morning, autofocus: true, placeholder:"例： 06：00〜09：00" %>
   </div>
   
   <div class="form__field center">
@@ -51,7 +50,7 @@
   
   <div class="form__field center">
     <%= f.label "住所" %><br />
-    <%= f.text_field :address, autofocus: true %>
+    <%= f.text_field :address, autofocus: true, placeholder:"県から"%>
   </div>
 
   <div class="form__field center">
