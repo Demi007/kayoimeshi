@@ -8,6 +8,7 @@ class Public::ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = current_user.reviews.new(review_params)
     @review.restaurant_id = @restaurant.id
+    @review.score = Language.get_data(review_params[:comment])  #この行を追加
     @review.save
     redirect_to restaurant_path(@restaurant)
   end

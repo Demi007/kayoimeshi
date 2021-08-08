@@ -93,7 +93,8 @@
       <div>
       <%= review.rate %>
     　  <span id="star-rate-<%= review.id %>"></span>
-    　 <p class="text"><%= review.comment %></p> 
+    　 <p class="text"><%= review.comment %></p>
+    　 <span class="sentiment-score">感情分析スコア<%= review.score %></span>
     　  <script>
         $('#star-rate-<%= review.id %>').raty({
           size: 38,
