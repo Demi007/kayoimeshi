@@ -1,22 +1,23 @@
 <h1>レビュー一覧</h1>
 
 　<% @reviews.each do |review| %>
-　<% if user_signed_in?%>
-  　
-  　  <div>
-  　    <%= review.rate %>
-  　    <span id="star-rate-<%= review.id %>"></span>
-  　 </div>
-  　 
-  　 <div>
-  　    <%= review.comment %>
-  　    <span class="sentiment-score">感情分析スコア<%= review.score %></span>
-  　 </div>
-  　 
-  　 <% if review.user_id == current_user.id %>
-  　    <%= link_to '評価を編集', edit_restaurant_review_path(@restaurant.id, review.id) %>
-  　 <% end %>
-  <% end %>
+  　<% if user_signed_in?%>
+    　
+    　  <div>
+    　    <%= review.rate %>
+    　    <span id="star-rate-<%= review.id %>"></span>
+    　 </div>
+    　 
+    　 <div>
+    　    <%= review.comment %>
+    　    <span class="sentiment-score">感情分析スコア<%= review.score %></span>
+    　 </div>
+    　 
+    　 <% if review.user_id == current_user.id %>
+    　    <%= link_to '評価を編集', edit_restaurant_review_path(@restaurant.id, review.id) %>
+    　 <% end %>
+    　 
+    <% end %>
   
 　  <script>
     $('#star-rate-<%= review.id %>').raty({

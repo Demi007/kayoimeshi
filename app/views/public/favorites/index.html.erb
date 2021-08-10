@@ -1,5 +1,5 @@
 <h1>お気に入り店舗一覧</h1>
 
-<% @user.favorites.each do |favorite| %>
- <%= link_to favorite.restaurant.name, restaurant_path(favorite.restaurant.id)%>
-<% end %>
+  <% @user.favorites.each do |favorite| %>
+   <%= link_to favorite.restaurant.name, restaurant_path(favorite.restaurant.id)%>
+  <% end %>

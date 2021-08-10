@@ -1,32 +1,40 @@
- <div class="container">
-    <% @favorites.each do |favorite|%>
-    
-    <div class="restaurant border shadow">
+<div class="container">
+  <% @favorites.each do |favorite|%>
+  <div class="restaurant border shadow">
   
-  <div class="restaurant__item small-img">
-　  <div class="restaurant__item--small-img">
-　    <% favorite.restaurant.images.first(1).each do |image| %>
-　     <%= attachment_image_tag image, :img, :fill, 100, 100 %>
-　    <% end %>
-　  </div>
-　</div>
-　  
-　<div class="restaurant__item">
-　  <h4>店名</h4><p><%= link_to favorite.restaurant.name, restaurant_path(favorite.restaurant.id) %></p>
-  </div>
-  <div class="restaurant__item">
-　  <h4>営業時間</h4><p>朝<%= favorite.restaurant.open_morning %></p><p>昼<%= favorite.restaurant.open_noon %></p><p>夜<%= favorite.restaurant.open_night %></p>
-　</div>
-　<div class="restaurant__item">  
-　  <h4>価格帯</h4><p><%= favorite.restaurant.price_range %>円</p>
-　</div>
-　<div class="restaurant__item"> 
-　  <h4>定休日</h4><p><%= favorite.restaurant.regular_holiday%></p>
-　</div>
-　<div class="restaurant__item">  
-　  <h4>住所</h4><p><%= favorite.restaurant.address %></p>
-　</div>
+    <div class="restaurant__item small-img">
+  　  <div class="restaurant__item--small-img">
+  　    <% favorite.restaurant.images.first(1).each do |image| %>
+  　     <%= attachment_image_tag image, :img, :fill, 100, 100 %>
+  　    <% end %>
+  　  </div>
+  　</div>
+  　  
+  　<div class="restaurant__item">
+  　  <h4>店名</h4>
+  　  <p><%= link_to favorite.restaurant.name, restaurant_path(favorite.restaurant.id) %></p>
+    </div>
+    
+    <div class="restaurant__item">
+  　  <h4>営業時間</h4>
+  　  <p>朝<%= favorite.restaurant.open_morning %></p><p>昼<%= favorite.restaurant.open_noon %></p><p>夜<%= favorite.restaurant.open_night %></p>
+  　</div>
+  　
+  　<div class="restaurant__item">  
+  　  <h4>価格帯</h4>
+  　  <p><%= favorite.restaurant.price_range %>円</p>
+  　</div>
+  　
+  　<div class="restaurant__item"> 
+  　  <h4>定休日</h4>
+  　  <p><%= favorite.restaurant.regular_holiday%></p>
+  　</div>
+  　
+  　<div class="restaurant__item">  
+  　  <h4>住所</h4>
+  　  <p><%= favorite.restaurant.address %></p>
+  　</div>
 
-</div>
-<% end %>
+  </div>
+  <% end %>
 </div>
