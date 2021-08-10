@@ -19,6 +19,7 @@ class Public::ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
+    
     @review.update(review_params)
     redirect_to restaurant_reviews_path(@review.restaurant_id)
   end
@@ -38,6 +39,6 @@ class Public::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :rate)
+    params.require(:review).permit(:comment, :rate, :score)
   end
 end

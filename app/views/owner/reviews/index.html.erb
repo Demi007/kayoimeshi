@@ -24,7 +24,9 @@
     </script>
     
 　<% end %>
-　 <%= paginate @reviews %>
-　 <div>
+　
+  <%= paginate @reviews %>
+  
+　<div>
 　 <%= link_to "戻る", owner_restaurant_path(@restaurant.id) %>
-　 </div>
+　</div>

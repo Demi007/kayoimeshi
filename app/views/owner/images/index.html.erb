@@ -6,10 +6,11 @@
     <% end %>
   <% end %>
 </div>
+
 <div>
-<%= form_with model: @image, url: owner_restaurant_images_path, local:true do |f| %>
-  <h4>画像</h4>
-  <%= f.attachment_field :img %>
-  <%= f.submit '投稿' %>
-<% end %>
+  <strong>画像</strong>
+  <%= form_with model: @image, url: owner_restaurant_images_path, local:true do |f| %>
+    <%= f.attachment_field :img %>
+    <%= f.submit '投稿' %>
+  <% end %>
 </div>
