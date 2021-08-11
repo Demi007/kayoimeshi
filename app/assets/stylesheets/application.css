@@ -268,3 +268,70 @@ main {
 a{
   text-decoration: none;
 }
+
+/*レスポンシブ対応*/
+/* タブレット横置きサイズ（1024px）以下の際に適用される設定 */
+@media screen and (max-width: 1024px) {
+  
+}
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width: 768px) {
+  
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .logo{
+    color: #fff;
+    font-size: 20px;
+  }
+  .nav__list--item {
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 12px;
+  }
+  .footer-text{
+    font-size: 10px;
+  }
+  main{
+    width: 100%;
+    padding: 0 10px;
+  }
+  label{
+    font-size: 10px;
+  }
+  .restaurant{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    margin-top: 20px;
+  }
+  .restaurant__item{
+    margin-right: 0px;
+  }
+  .restaurant__item--name{
+  }
+  p{
+    font-size: 12px
+  }
+  table{
+    width: 100%;
+  }
+  /*.slick-track{*/
+  /*  width: 100% !important;*/
+  /*  heigth:100px !important;*/
+  /*}*/
+  /*.slider{*/
+  /*  padding-top: 20px;*/
+  /*  width: 400px !important;*/
+  /*}*/
+  /*.slick-dots{*/
+  /*  width: 400px !important;*/
+  /*}*/
+  /*.restaurant__item--small-img img{*/
+  /*  width: 100%;*/
+  /*}*/
+  /*.slick-slide img{*/
+  /*  heigth: fit-content;*/
+  /*}*/
+}

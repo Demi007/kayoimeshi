@@ -2,10 +2,10 @@
 <div class="container">
   <div class="restaurant">
       <div class="restaurant__item small-image">
-        <div class="slider restaurant__item-img">
+        <div class="slider restaurant__item-img" style="max-width: 600px;">
         <% @images.each do |image| %>
           <%= link_to restaurant_images_path(@restaurant.id) do %>
-            <%= attachment_image_tag image, :img, :fill, 600, 400 %>
+            <%= attachment_image_tag image, :img, style: "height: 400px;width: 600px;object-fit: cover;" %>
               <div class="tag-box">
                 <% image.tags.each do |tag| %>
                   <span class="label"><%= tag.name %></span>
@@ -18,7 +18,7 @@
       
     <div class="restaurant__item">
       <table>
-        <tr>
+        <tr class="restaurant__item--name">
           <td><strong>店名</strong></td>
           <td></td>
           <td><%= @restaurant.name %></td>
