@@ -15,7 +15,7 @@
 主に30代~50代の男性
 
 ### 主な利用シーン
-会社帰りや、転勤、出張先などで、日頃から通える食事処探しをする際
+会社帰り、転勤、出張先などで、日頃から通える食事処探しをする際
 
 ## 設計書
 ER図 https://drive.google.com/file/d/12CDuBjN_T9PKimnqNNl0xkFTtS7hr3EF/view?usp=sharing  
