@@ -14,6 +14,11 @@
  *= require_self
  */
  
+ * {
+   padding: 0;
+   margin: 0;
+ }
+ 
  /*ヘッダー・フッター*/
  header{
    width: 100%;
@@ -194,11 +199,19 @@ main {
   flex-direction: column;
 }
 .restaurant{
+  /* 
   height: fit-content;
   width: 100%;
   display: flex;
   margin: 0 auto;
   margin-top: 20px;
+  */
+  display: flex;
+}
+
+.r-left,
+.r-right {
+  width: 50%;
 }
 .restaurant__item{
   margin-right: 30px;
@@ -223,12 +236,28 @@ main {
 }
 
 /*スライドショー*/
+/*
 .slider{
   padding-top: 20px;
   width: 600px !important;
 }
 .slick-dots{
   width: 600px !important;
+}
+.slide-image{
+    height: 400px;
+    width: 600px;
+    object-fit: cover;
+}
+*/
+.slick-image {
+  height: 20vw;
+  width: 100%;
+  object-fit: cover;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
 }
 
 /*装飾*/
@@ -300,6 +329,7 @@ a{
   label{
     font-size: 10px;
   }
+  /*
   .restaurant{
     width: 100%;
     display: flex;
@@ -311,11 +341,36 @@ a{
   }
   .restaurant__item--name{
   }
+  */
+  .restaurant{
+  /* 
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+  */
+  display: block;
+  }
+  
+  .r-left,
+  .r-right {
+    width: 100%;
+  }
+  
   p{
     font-size: 12px
   }
   table{
     width: 100%;
+  }
+  .slide-image{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+  }
+  .slick-slide{
+    width: 400px;
   }
   /*.slick-track{*/
   /*  width: 100% !important;*/
