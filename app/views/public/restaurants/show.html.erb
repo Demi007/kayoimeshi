@@ -4,7 +4,12 @@
     <div class="r-left">
       <div class="slider">
         <% @images.each do |image| %>
+          <div>
           <%= attachment_image_tag image, :img, class:"slick-image" %>
+            <% image.tags.each do |tag| %>
+            <span class="label"><%= tag.name %></span>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
