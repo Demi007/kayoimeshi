@@ -17,6 +17,7 @@
  * {
    padding: 0;
    margin: 0;
+   box-sizing: border-box;
  }
  
  /*ヘッダー・フッター*/
@@ -212,6 +213,7 @@ main {
 .r-left,
 .r-right {
   width: 50%;
+  margin: 15px;
 }
 .restaurant__item{
   margin-right: 30px;
@@ -257,9 +259,12 @@ main {
 }
 .slick-prev:before,
 .slick-next:before {
-  color: #000;
+  display: none;
 }
-
+.slick-prev,
+.slick-arrow{
+  display: none;
+}
 /*装飾*/
 .border{
   border: 2px solid gray;
@@ -350,6 +355,7 @@ a{
   margin: 0 auto;
   margin-top: 20px;
   */
+  width: 90%;
   display: block;
   }
   

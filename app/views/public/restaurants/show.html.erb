@@ -16,32 +16,21 @@
     
     <div class="r-right">
     <div class="restaurant__item">
-      <table>
-        <tr class="restaurant__item--name">
-          <td><strong>店名</strong></td>
-          <td></td>
-          <td><%= @restaurant.name %></td>
-        </tr>
-        <tr>
-          <td><strong>営業時間</strong></td>
-          <td></td>
-          <td><p>朝<%= @restaurant.open_morning %>、昼<%= @restaurant.open_noon %>、夜<%= @restaurant.open_night %></p></td>
-        </tr>
-        <tr>
-          <td><strong>定休日</strong></td>
-          <td></td>
-          <td><p><%= @restaurant.regular_holiday %></p></td>
-        </tr>
-        <tr>
-          <td><strong>住所</strong></td>
-          <td></td>
-          <td><p><%= @restaurant.address %></p></td>
-        </tr>
-        <tr>
-          <td><strong>評価平均</strong></td>
-          <td></td>
-          <td id="star-average">
-             <script>
+      <div>
+        <strong></strong>
+      </div>
+      <div>
+        <strong></strong>
+      </div>
+      <div>
+        <strong></strong>
+      </div>
+      <div>
+        <strong></strong>
+      </div>
+      <div id="star-average">
+        <strong>平均評価</strong>
+        <script>
               $('#star-average').raty({
                 size     : 38,
                 starOff:  '<%= asset_path('star-off.png') %>',
@@ -51,21 +40,17 @@
                 readOnly: true,
                 score: '<%= @restaurant.reviews.average(:rate).to_f.round(1) %>',
               });
-             </script>  
-          </td>
-          <tr>
-          <td><strong>価格帯</strong></td>
-          <td></td>
-          <td><p><%= @restaurant.price_range %>円</p></td>
-        </tr>
-        </tr>
-      </table>
-      <div class="restaurant__item">
-        <strong>紹介</strong>
-        <div>
-         <%= @restaurant.introduction %>
-        </div>
+        </script> 
       </div>
+      <div>
+        <strong>価格帯</strong>
+        <%= @restaurant.price_range %>円
+      </div>
+      <div>
+        <strong>紹介</strong>
+        <%= @restaurant.introduction %>
+      </div>
+
     </div>
   </div>
   </div>
