@@ -365,7 +365,8 @@ a{
   }
   
   p{
-    font-size: 12px
+    font-size: 12px;
+    text-align: center;
   }
   table{
     width: 100%;

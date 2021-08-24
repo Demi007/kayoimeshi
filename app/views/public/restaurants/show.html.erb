@@ -1,5 +1,4 @@
 <h1>店舗詳細</h1>
-<div class="container">
   <div class="restaurant">
     <div class="r-left">
       <div class="slider">
@@ -17,16 +16,20 @@
     <div class="r-right">
     <div class="restaurant__item">
       <div>
-        <strong></strong>
+        <strong>店名</strong>
+        <p><%= @restaurant.name %></p>
       </div>
       <div>
-        <strong></strong>
+        <strong>営業時間</strong>
+        <p>朝<%= @restaurant.open_morning %>、昼<%= @restaurant.open_noon %>、夜<%= @restaurant.open_night %></p>
       </div>
       <div>
-        <strong></strong>
+        <strong>定休日</strong>
+        <%= @restaurant.regular_holiday %>
       </div>
       <div>
-        <strong></strong>
+        <strong>住所</strong>
+        <%= @restaurant.address %>
       </div>
       <div id="star-average">
         <strong>平均評価</strong>
@@ -165,4 +168,3 @@
               src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
       </script>
     </div>
-</div>
