@@ -253,7 +253,7 @@ main {
 }
 */
 .slick-image {
-  height: 20vw;
+  height: 35vw;
   width: 100%;
   object-fit: cover;
 }
@@ -266,6 +266,9 @@ main {
   display: none;
 }
 /*装飾*/
+p {
+  text-align: center;
+}
 .border{
   border: 2px solid gray;
   border-radius: 10px;

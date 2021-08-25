@@ -6,7 +6,7 @@
           <div>
           <%= attachment_image_tag image, :img, class:"slick-image" %>
             <% image.tags.each do |tag| %>
-            <span class="label"><%= tag.name %></span>
+              <span class="label"><%= tag.name %></span>
             <% end %>
           </div>
         <% end %>
@@ -25,14 +25,15 @@
       </div>
       <div>
         <strong>定休日</strong>
-        <%= @restaurant.regular_holiday %>
+        <p><%= @restaurant.regular_holiday %></p>
       </div>
       <div>
         <strong>住所</strong>
-        <%= @restaurant.address %>
+        <p><%= @restaurant.address %></p>
       </div>
-      <div id="star-average">
+      <div>
         <strong>平均評価</strong>
+        <p id="star-average"></p>
         <script>
               $('#star-average').raty({
                 size     : 38,
@@ -47,11 +48,11 @@
       </div>
       <div>
         <strong>価格帯</strong>
-        <%= @restaurant.price_range %>円
+        <p><%= @restaurant.price_range %>円</p>
       </div>
       <div>
         <strong>紹介</strong>
-        <%= @restaurant.introduction %>
+        <p><%= @restaurant.introduction %></p>
       </div>
 
     </div>
