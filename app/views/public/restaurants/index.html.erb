@@ -8,44 +8,39 @@
   </div>
   
 <div class="container">
-  
   <% @restaurants.each do |restaurant| %>
-    <div class="restaurant border shadow">
+    <div class="card border shadow">
       
-      <div class="restaurant__item small-img">
-    　  <div class="restaurant__item--small-img">
-    　    <% restaurant.images.first(1).each do |image| %>
-    　     <%= attachment_image_tag image, :img, :fill, 100, 100 %>
-    　    <% end %>
-    　  </div>
-    　</div>
-    　  
-    　<div class="restaurant__item">
-    　  <h4>店名</h4>
-    　  <p><%= link_to restaurant.name, restaurant_path(restaurant.id) %></p>
+      <div class="slider slider">
+        <% restaurant.images.each do |image| %>
+          <div>
+          <%= attachment_image_tag image, :img, class:"slick-image1" %>
+          </div>
+        <% end %>
       </div>
       
-      <div class="restaurant__item">
-    　  <h4>営業時間</h4>
-    　  <p>朝<%= restaurant.open_morning %></p><p>昼<%= restaurant.open_noon %></p><p>夜<%= restaurant.open_night %></p>
-    　</div>
-    　
-    　<div class="restaurant__item">  
-    　  <h4>価格帯</h4>
-    　  <p><%= restaurant.price_range %>円</p>
-    　</div>
-    　
-    　<div class="restaurant__item"> 
-    　  <h4>定休日</h4>
-    　  <p><%= restaurant.regular_holiday%></p>
-    　</div>
-    　
-    　<div class="restaurant__item">  
-    　  <h4>住所</h4>
-    　  <p><%= restaurant.address %></p>
-    　</div>
-    
+      <%= link_to restaurant_path(restaurant.id) do %>
+      <div class="card__contents">
+    　 <strong>店名</strong>
+    　 <%= restaurant.name %>
+      </div>
+      
+      <div class="card__contents">
+    　 <strong>価格帯</strong>
+    　 <%= restaurant.price_range %>円
+      </div>
+      
+      <div class="card__contents">
+    　 <strong>定休日</strong>
+    　 <%= restaurant.regular_holiday %>
+      </div>
+      
+      <div class="card__contents">
+    　 <strong>住所</strong></br>
+    　 <%= restaurant.address %>
+      </div>
+      <% end %>
     </div>
   <% end %>
-  <%= paginate @restaurants %>
 </div>
+  <%= paginate @restaurants %>
