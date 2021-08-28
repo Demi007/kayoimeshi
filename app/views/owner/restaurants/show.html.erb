@@ -1,44 +1,41 @@
 
 <strong><%= link_to "編集する", edit_owner_restaurant_path(@restaurant) %></strong>
-<div class="container">
-  <div class="restaurant">
-      <div class="restaurant__item small-image">
-        <div class="slider restaurant__item-img">
-         <% @images.each do |image| %>
-           <%= link_to owner_restaurant_images_path(@restaurant.id) do %>
-             <%= attachment_image_tag image, :img, :fill, 600, 400 %>
-           <% end %>
-         <% end %>
-        </div>
+<div class="restaurant">
+    <div class="r-left">
+      <div class="slider">
+        <% @images.each do |image| %>
+          <div>
+          <%= attachment_image_tag image, :img, class:"slick-image" %>
+            <% image.tags.each do |tag| %>
+              <span class="label"><%= tag.name %></span>
+            <% end %>
+          </div>
+        <% end %>
       </div>
+    </div>
     
+    <div class="r-right">
     <div class="restaurant__item">
-      <table>
-        <tr>
-          <td><strong>店名</strong></td>
-          <td></td>
-          <td><%= @restaurant.name %></td>
-        </tr>
-        <tr>
-          <td><strong>営業時間</strong></td>
-          <td></td>
-          <td><p>朝<%= @restaurant.open_morning %>昼<%= @restaurant.open_noon %>夜<%= @restaurant.open_night %></p></td>
-        </tr>
-        <tr>
-          <td><strong>定休日</strong></td>
-          <td></td>
-          <td><p><%= @restaurant.regular_holiday %></p></td>
-        </tr>
-        <tr>
-          <td><strong>住所</strong></td>
-          <td></td>
-          <td><p><%= @restaurant.address %></p></td>
-        </tr>
-        <tr>
-          <td><strong>評価平均</strong></td>
-          <td></td>
-          <td id="star-average">
-             <script>
+      <div>
+        <strong>店名</strong>
+        <p><%= @restaurant.name %></p>
+      </div>
+      <div>
+        <strong>営業時間</strong>
+        <p>朝<%= @restaurant.open_morning %>、昼<%= @restaurant.open_noon %>、夜<%= @restaurant.open_night %></p>
+      </div>
+      <div>
+        <strong>定休日</strong>
+        <p><%= @restaurant.regular_holiday %></p>
+      </div>
+      <div>
+        <strong>住所</strong>
+        <p><%= @restaurant.address %></p>
+      </div>
+      <div>
+        <strong>平均評価</strong>
+        <p id="star-average"></p>
+        <script>
               $('#star-average').raty({
                 size     : 38,
                 starOff:  '<%= asset_path('star-off.png') %>',
@@ -48,26 +45,21 @@
                 readOnly: true,
                 score: '<%= @restaurant.reviews.average(:rate).to_f.round(1) %>',
               });
-             </script>  
-          </td>
-          <tr>
-          <td><strong>価格帯</strong></td>
-          <td></td>
-          <td><p><%= @restaurant.price_range %>円</p></td>
-        </tr>
-        </tr>
-      </table>
-        <div class="restaurant__item">
-            <strong>紹介</strong>
-            <div>
-             <%= @restaurant.introduction %>
-            </div>
-        </div>
+        </script> 
+      </div>
+      <div>
+        <strong>価格帯</strong>
+        <p><%= @restaurant.price_range %>円</p>
+      </div>
+      <div>
+        <strong>紹介</strong>
+        <p><%= @restaurant.introduction %></p>
+      </div>
+
     </div>
   </div>
 </div>
-    
-  <div class="tab-wrap"></div>
+  <div class="tab-wrap">
     <input id="tab01" type="radio" name="tab" class="tab-switch" checked="checked">
     <label class="tab-label" for="tab01">レビュー</label>
     <div class="tab-content">
