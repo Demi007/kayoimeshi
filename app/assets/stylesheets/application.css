@@ -250,20 +250,6 @@ a {
 }
 
 /*スライドショー*/
-/*
-.slider{
-  padding-top: 20px;
-  width: 600px !important;
-}
-.slick-dots{
-  width: 600px !important;
-}
-.slide-image{
-    height: 400px;
-    width: 600px;
-    object-fit: cover;
-}
-*/
 .slick-image {
   height: 35vw;
   width: 100%;
@@ -324,14 +310,6 @@ a{
 }
 
 /*レスポンシブ対応*/
-/* タブレット横置きサイズ（1024px）以下の際に適用される設定 */
-@media screen and (max-width: 1024px) {
-  
-}
-/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
-@media screen and (max-width: 768px) {
-  
-}
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width: 425px) {
   .logo{
@@ -384,21 +362,3 @@ a{
   .slick-slide{
     width: 400px;
   }
-  /*.slick-track{*/
-  /*  width: 100% !important;*/
-  /*  heigth:100px !important;*/
-  /*}*/
-  /*.slider{*/
-  /*  padding-top: 20px;*/
-  /*  width: 400px !important;*/
-  /*}*/
-  /*.slick-dots{*/
-  /*  width: 400px !important;*/
-  /*}*/
-  /*.restaurant__item--small-img img{*/
-  /*  width: 100%;*/
-  /*}*/
-  /*.slick-slide img{*/
-  /*  heigth: fit-content;*/
-  /*}*/
-}

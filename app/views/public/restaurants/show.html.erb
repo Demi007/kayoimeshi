@@ -14,49 +14,49 @@
     </div>
     
     <div class="r-right">
-    <div class="restaurant__item">
-      <div>
-        <strong>店名</strong>
-        <p><%= @restaurant.name %></p>
+      <div class="restaurant__item">
+        <div>
+          <strong>店名</strong>
+          <p><%= @restaurant.name %></p>
+        </div>
+        <div>
+          <strong>営業時間</strong>
+          <p>朝<%= @restaurant.open_morning %>、昼<%= @restaurant.open_noon %>、夜<%= @restaurant.open_night %></p>
+        </div>
+        <div>
+          <strong>定休日</strong>
+          <p><%= @restaurant.regular_holiday %></p>
+        </div>
+        <div>
+          <strong>住所</strong>
+          <p><%= @restaurant.address %></p>
+        </div>
+        <div>
+          <strong>平均評価</strong>
+          <p id="star-average"></p>
+          <script>
+                $('#star-average').raty({
+                  size     : 38,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: '<%= @restaurant.reviews.average(:rate).to_f.round(1) %>',
+                });
+          </script> 
+        </div>
+        <div>
+          <strong>価格帯</strong>
+          <p><%= @restaurant.price_range %>円</p>
+        </div>
+        <div>
+          <strong>紹介</strong>
+          <p><%= @restaurant.introduction %></p>
+        </div>
+  
       </div>
-      <div>
-        <strong>営業時間</strong>
-        <p>朝<%= @restaurant.open_morning %>、昼<%= @restaurant.open_noon %>、夜<%= @restaurant.open_night %></p>
-      </div>
-      <div>
-        <strong>定休日</strong>
-        <p><%= @restaurant.regular_holiday %></p>
-      </div>
-      <div>
-        <strong>住所</strong>
-        <p><%= @restaurant.address %></p>
-      </div>
-      <div>
-        <strong>平均評価</strong>
-        <p id="star-average"></p>
-        <script>
-              $('#star-average').raty({
-                size     : 38,
-                starOff:  '<%= asset_path('star-off.png') %>',
-                starOn : '<%= asset_path('star-on.png') %>',
-                starHalf: '<%= asset_path('star-half.png') %>',
-                half: true,
-                readOnly: true,
-                score: '<%= @restaurant.reviews.average(:rate).to_f.round(1) %>',
-              });
-        </script> 
-      </div>
-      <div>
-        <strong>価格帯</strong>
-        <p><%= @restaurant.price_range %>円</p>
-      </div>
-      <div>
-        <strong>紹介</strong>
-        <p><%= @restaurant.introduction %></p>
-      </div>
-
     </div>
-  </div>
   </div>
 
 <div class="row">
