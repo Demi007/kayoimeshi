@@ -200,11 +200,12 @@ a {
 .container{
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 .card{
   width: 30%;
   margin: 20px 15px;
-  padding-bottom: 50px;
+  padding-bottom: 50px; 
   /*text-align: center;*/
   }
 .card__contents{
@@ -332,6 +333,15 @@ a{
   label{
     font-size: 10px;
   }
+  .card{
+    width: 90%;
+    margin: 10px 15px;
+    padding-bottom: 10px; 
+  }
+  .card__contents {
+    margin-top: 0px; 
+    margin-right: 5px;
+  }
   
   .restaurant__item{
     margin-right: 0px;
@@ -354,11 +364,11 @@ a{
   table{
     width: 100%;
   }
-  .slide-image{
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
-  }
+.slick-image1 {
+  height: 60vw;
+  width: 100%;
+  object-fit: cover;
+}
   .slick-slide{
     width: 400px;
   }
