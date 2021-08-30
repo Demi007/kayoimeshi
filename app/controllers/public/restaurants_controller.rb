@@ -1,6 +1,6 @@
 class Public::RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.page(params[:page]).per(10)
+    @restaurants = Restaurant.page(params[:page]).per(6)
   end
 
   def show
