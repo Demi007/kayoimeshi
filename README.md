@@ -34,4 +34,4 @@ https://docs.google.com/spreadsheets/d/13Hkl5wvsPLoBfaYNxDvJDIYOg8GDKj5Qvq0myie5
 - IDE：Cloud9
 
 ## 使用素材
-- illustAC (https://www.ac-illust.com/)
+- 写真素材：illustAC (https://www.ac-illust.com/)
