@@ -4,12 +4,14 @@
     <div class="r-left">
       <div class="slider">
         <% @images.each do |image| %>
+        <%= link_to restaurant_images_path(@restaurant.id) do %>
           <div>
           <%= attachment_image_tag image, :img, class:"slick-image" %>
             <% image.tags.each do |tag| %>
               <span class="label"><%= tag.name %></span>
             <% end %>
           </div>
+        <% end %>
         <% end %>
       </div>
     </div>

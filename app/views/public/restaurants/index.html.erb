@@ -10,7 +10,6 @@
 <div class="container">
   <% @restaurants.each do |restaurant| %>
     <div class="card border shadow">
-      <%= link_to restaurant_path(restaurant.id) do %>
       
       <div class="slider slider">
         <% restaurant.images.each do |image| %>
@@ -19,6 +18,8 @@
           </div>
         <% end %>
       </div>
+      
+      <%= link_to restaurant_path(restaurant.id) do %>
       
       <div class="card__contents">
     　 <strong>店名</strong>
@@ -39,6 +40,7 @@
     　 <strong>住所</strong></br>
     　 <%= restaurant.address %>
       </div>
+      
       <% end %>
     </div>
   <% end %>
