@@ -1,7 +1,7 @@
 <h1>レビュー一覧</h1>
 
+<% if user_signed_in?%>
 　<% @reviews.each do |review| %>
-  　<% if user_signed_in?%>
     　
     　  <div>
     　    <%= review.rate %>
@@ -17,7 +17,7 @@
     　    <%= link_to '評価を編集', edit_restaurant_review_path(@restaurant.id, review.id) %>
     　 <% end %>
     　 
-    <% end %>
+  <% end %>
   
 　  <script>
     $('#star-rate-<%= review.id %>').raty({
@@ -30,7 +30,17 @@
       score: <%= review.rate %>,
     });
     </script>
-　<% end %>
+    
+<% else %>
+
+      <strong>
+    　<%= link_to "新規登録", new_user_registration_path %>
+    　・
+    　<%= link_to "ログイン", new_user_session_path %>
+    　が必要です。
+    　</strong>
+    
+  <% end %>
 　 <%= paginate @reviews %>
 　<div>
     <%= link_to "戻る", restaurant_path(@restaurant.id) %>
