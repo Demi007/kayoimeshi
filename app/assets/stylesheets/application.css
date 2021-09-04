@@ -58,81 +58,40 @@ footer{
   text-decoration: none;
 }
 
-/*ボタン*/
-.btn{
-  border: none;
-  outline: none;
-  color: white;
-  text-decoration: none;
+
+main {
+  width: 90%;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 70px 0;
+}
+.container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  width: 30%;
+  margin: 20px 15px;
+  padding-bottom: 50px; 
+}
+.card__contents{
+  margin-top: 10px;
+  text-align: center;
+}
+.restaurant{
+  display: flex;
+}
+.r-left,
+.r-right {
+  width: 50%;
+  margin: 15px;
+}
+.restaurant__item{
+  margin-right: 30px;
 }
 
-.btn__orange{
-  height: 40px;
-  width: 80px;
-  margin: 40px;
-  color: #fff;
-  background-color: #eb6100;
-  border-radius: 100vh;
-  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
-}
 
-.btn__orange:hover{
-  color: #fff;
-  background: #f56500;
-  border-radius: 100vh;
-}
-
-.btn__green{
-  height: 40px;
-  width: 80px;
-  margin: 40px;
-  color: #fff;
-  background-color: #00CC00;
-  border-radius: 100vh;
-  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
-}
-
-.btn__green:hover{
-  color: #fff;
-  background: #00DD00;
-  border-radius: 100vh;
-}
-
-.btn__review{
-  height: 40px;
-  width: 200px;
-  color: gray;
-  margin-left: 70px;
-  background-color: #FFFF00;
-  border-radius: 100vh;
-  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
-  text-decoration: none;
-  line-height: 40px;
-}
-
-.btn__review:hover{
-  color: gray;
-  background: #FFFF77;
-  border-radius: 100vh;
-}
-
-.btn__favorite{
-  height: 40px;
-  width: 200px;
-  color: #fff;
-  margin-left: 70px;
-  background-color: #FF6928;
-  border-radius: 100vh;
-  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
-  text-decoration: none;
-  line-height: 40px;
-}
-
-.btn__favorite:hover{
-  color: #fff;
-  background: #FF773E;
-  border-radius: 100vh;
-}
 
 /*フォーム*/
 input{
@@ -144,13 +103,14 @@ input{
   margin: 20px 0px;
 }
 
+
+
 /*タブ機能*/
 .tab-wrap {
   display: flex;
   flex-wrap: wrap;
   margin:20px 0;
 }
-
 .tab-wrap:after {
   content: '';
   width: 100%;
@@ -159,7 +119,6 @@ input{
   display: block;
   order: -1;
 }
-
 .tab-label {
   color: White;
   background: LightGray;
@@ -174,22 +133,18 @@ input{
   border-radius: 5px 5px 0 0;
   flex: 1;
 }
-
 .tab-label:not(:last-of-type) {
   margin-right: 5px;
 }
-
 .tab-content {
   width: 100%;
   height: 0px;
   overflow: hidden;
   opacity: 0;
 }
-
 .tab-switch:checked+.tab-label {
   background: #325A8C;
 }
-
 .tab-switch:checked+.tab-label+.tab-content {
   height: auto;
   overflow: auto;
@@ -198,131 +153,128 @@ input{
   transition: .5s opacity;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
-
 .tab-switch {
   display: none;
 }
 
-main {
-  width: 90%;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 70px 0;
-}
-
-a {
-  color: gray;
-}
-
-.container{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card{
-  width: 30%;
-  margin: 20px 15px;
-  padding-bottom: 50px; 
-  /*text-align: center;*/
-}
-
-.card__contents{
-  margin-top: 10px;
-  text-align: center;
-}
-
-.restaurant{
-  /* 
-  height: fit-content;
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-  margin-top: 20px;
-  */
-  display: flex;
-}
-
-.r-left,
-.r-right {
-  width: 50%;
-  margin: 15px;
-}
-
-.restaurant__item{
-  margin-right: 30px;
-}
 
 
 /*画像*/
-.restaurant__item--small-img{
-  height: 220px;
-  width: 220px;
-  margin-left: 30px;
-}
-
-.restaurant__item--small-img img{
-  width: 100%;
-}
-
-.small-img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: -15px; 
-  margin-bottom: 30px
-}
-
 /*スライドショー*/
 .slick-image {
   height: 35vw;
   width: 100%;
   object-fit: cover;
 }
-
 .slick-image1 {
   height: 20vw;
   width: 100%;
   object-fit: cover;
   border-radius: 10px 10px 0px 0px;
 }
-
 .slick-prev:before,
 .slick-next:before {
   display: none;
 }
-
 .slick-prev,
 .slick-arrow{
   display: none;
 }
+
+
+
+/*ボタン*/
+.btn{
+  border: none;
+  outline: none;
+  color: white;
+  text-decoration: none;
+}
+.btn__orange{
+  height: 40px;
+  width: 80px;
+  margin: 40px;
+  color: #fff;
+  background-color: #eb6100;
+  border-radius: 100vh;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
+}
+.btn__orange:hover{
+  color: #fff;
+  background: #f56500;
+  border-radius: 100vh;
+}
+.btn__green{
+  height: 40px;
+  width: 80px;
+  margin: 40px;
+  color: #fff;
+  background-color: #00CC00;
+  border-radius: 100vh;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
+}
+.btn__green:hover{
+  color: #fff;
+  background: #00DD00;
+  border-radius: 100vh;
+}
+.btn__review{
+  height: 40px;
+  width: 200px;
+  color: gray;
+  margin-left: 70px;
+  background-color: #FFFF00;
+  border-radius: 100vh;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  line-height: 40px;
+}
+.btn__review:hover{
+  color: gray;
+  background: #FFFF77;
+  border-radius: 100vh;
+}
+.btn__favorite{
+  height: 40px;
+  width: 200px;
+  color: #fff;
+  margin-left: 70px;
+  background-color: #FF6928;
+  border-radius: 100vh;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  line-height: 40px;
+}
+.btn__favorite:hover{
+  color: #fff;
+  background: #FF773E;
+  border-radius: 100vh;
+}
+
+
+
 /*装飾*/
+a{
+  text-decoration: none;
+  color: gray;
+}
 p {
   text-align: center;
 }
-
 .border{
   border: 1px solid gray;
   border-radius: 10px;
 }
-
 .shadow{
    box-shadow: 10px 10px 10px -5px rgba(0, 0, 0, 0.5);
 }
-
 .text{
   word-break:break-all;
   overflow-wrap:break-word;
 }
-
-.row{
-  display: flex;
-}
-
 .center{
   text-align: center;
 }
-
 .label {
   background-color: #337ab7;
   display: inline;
@@ -337,13 +289,7 @@ p {
   border-radius: .25em;
 }
 
-.tag-box{
-  text-decoration: none;
-}
 
-a{
-  text-decoration: none;
-}
 
 /*レスポンシブ対応*/
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
@@ -399,11 +345,11 @@ a{
   table{
     width: 100%;
   }
-.slick-image1 {
-  height: 60vw;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px 10px 0px 0px;
+  .slick-image1 {
+    height: 60vw;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
   }
   .slick-slide{
     width: 400px;
