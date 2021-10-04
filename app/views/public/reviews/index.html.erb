@@ -17,8 +17,6 @@
     　    <%= link_to '評価を編集', edit_restaurant_review_path(@restaurant.id, review.id) %>
     　 <% end %>
     　 
-  <% end %>
-  
 　  <script>
     $('#star-rate-<%= review.id %>').raty({
       size: 38,
@@ -30,6 +28,8 @@
       score: <%= review.rate %>,
     });
     </script>
+  <% end %>
+  
     
 <% else %>
 
